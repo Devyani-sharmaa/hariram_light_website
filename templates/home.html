@@ -1,0 +1,112 @@
+
+
+
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+<!-- HERO SECTION -->
+<section class="hero d-flex align-items-center justify-content-center text-center">
+    <div class="hero-content">
+        <h1 class="display-4 fw-bold">Premium Lights & Generator Services in Karnal</h1>
+        <p class="lead mt-3">Wedding | Jagran | Birthday | All Events</p>
+        <a href="/booking/" class="btn btn-custom mt-3">Book Now</a>
+    </div>
+</section>
+
+<!-- SERVICES SECTION -->
+<section id="services" class="container mt-5">
+    <h2 class="text-center mb-5 fw-bold">Our Services</h2>
+
+    <div class="container py-5">
+        <div class="row g-4">
+    
+            <!-- Generator Booking -->
+            <div class="col-md-4" data-aos="fade-up">
+                <div class="card service-card border-0 shadow-lg h-100 overflow-hidden">
+            
+                    <!-- Image -->
+                    <img src="{% static 'images/genr.jpg' %}"
+                         class="card-img-top"
+                         style="height:230px; object-fit:cover; transition:0.4s;">
+            
+                    <div class="card-body p-4">
+            
+                        <h4 class="fw-bold text-center mb-3">Generator Booking</h4>
+            
+                        <ul class="list-unstyled">
+                            <li class="mb-2">⚡ 5 KV Generator – Small functions & home events</li>
+                            <li class="mb-2">⚡ 10 KV Generator – Medium gatherings</li>
+                            <li class="mb-2">⚡ 15 KV Generator – Large events & weddings</li>
+                            <li class="mb-2">✅ Noise-controlled & fuel-efficient</li>
+                            <li>✅ On-time setup & technical support</li>
+                        </ul>
+            
+                        <div class="text-center">
+                            <a href="/booking/" class="btn btn-warning px-4 mt-3">Book Now</a>
+                        </div>
+            
+                    </div>
+                </div>
+            </div>
+            
+    
+            <!-- Event Lighting -->
+            <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+                <div class="card service-card border-0 shadow-lg h-100">
+    
+                    <img src="{% static 'images/wed.jpg' %}" class="card-img-top" style="height:220px; object-fit:cover;">
+    
+                    <div class="card-body text-center p-4">
+                        <h4 class="fw-bold mb-3">Event Lighting</h4>
+    
+                        <ul class="text-start">
+                            <li>✨ Wedding Lighting – Royal & decorative lights</li>
+                            <li>🪔 Jagran Lighting – Spiritual & stage lighting</li>
+                            <li>🎉 Birthday Party Lighting – Colorful LED lights</li>
+                            <li>💡 LED strings, focus lights & stage lights available</li>
+                        </ul>
+    
+                        <a href="/booking/" class="btn btn-custom mt-3">Book Now</a>
+                    </div>
+                </div>
+            </div>
+    
+            <!-- Decoration Services -->
+            <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+                <div class="card service-card border-0 shadow-lg h-100">
+    
+                    <img src="{% static 'images/event.jpg' %}" class="card-img-top" style="height:220px; object-fit:cover;">
+    
+                    <div class="card-body text-center p-4">
+                        <h4 class="fw-bold mb-3">Decoration Services</h4>
+    
+                        <ul class="text-start">
+                            <li>🎪 Ghunghroo / Ghoomar Decoration</li>
+                            <li>💡 LED Decoration – Modern & elegant look</li>
+                            <li>☂️ Umbrella Decoration – Trendy & colorful</li>
+                            <li>🌸 Custom theme decoration available</li>
+                        </ul>
+    
+                        <a href="/booking/" class="btn btn-custom mt-3">Book Now</a>
+                    </div>
+                </div>
+            </div>
+    
+        </div>
+    </div>
+</section>
+
+<!-- ABOUT SECTION -->
+<section id="about" class="bg-light mt-5 p-5">
+    <div class="container text-center">
+        <h2 class="fw-bold mb-4">About Us</h2>
+        <p class="lead">
+            Jyoti Lights & Generator has been providing premium lighting and
+            generator services in Karnal for weddings, jagrans, birthday parties
+            and all special events. We ensure high-quality setup, on-time service
+            and full power backup for your big day.
+        </p>
+    </div>
+</section>
+
+{% endblock %}

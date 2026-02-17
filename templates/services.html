@@ -1,0 +1,84 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<!-- Hero Section -->
+<section class="py-5 text-center text-white" style="background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1519741497674-611481863552') center/cover no-repeat;">
+    <div class="container">
+        <h1 class="fw-bold display-5">Our Premium Services</h1>
+        <p class="lead">Making Your Events Bright, Royal & Memorable ✨</p>
+    </div>
+</section>
+
+<!-- Services Section -->
+<div class="container py-5">
+    <div class="row g-4">
+
+        <!-- Generator Booking -->
+        <div class="col-md-4" data-aos="fade-up">
+            <div class="card service-card border-0 shadow-lg h-100">
+
+                <img src="{% static 'images/genr.jpg' %}" class="card-img-top" style="height:220px; object-fit:cover;">
+
+                <div class="card-body text-center p-4">
+                    <h4 class="fw-bold mb-3">Generator Booking</h4>
+
+                    <ul class="text-start">
+                        <li>⚡ 5 KV Generator – Small functions & home events</li>
+                        <li>⚡ 10 KV Generator – Medium gatherings</li>
+                        <li>⚡ 15 KV Generator – Large events & weddings</li>
+                        <li>✅ Noise-controlled & fuel-efficient</li>
+                        <li>✅ On-time setup & technical support</li>
+                    </ul>
+
+                    <a href="/booking/" class="btn btn-custom mt-3">Book Now</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Event Lighting -->
+        <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+            <div class="card service-card border-0 shadow-lg h-100">
+
+                <img src="{% static 'images/wed.jpg' %}" class="card-img-top" style="height:220px; object-fit:cover;">
+
+                <div class="card-body text-center p-4">
+                    <h4 class="fw-bold mb-3">Event Lighting</h4>
+
+                    <ul class="text-start">
+                        <li>✨ Wedding Lighting – Royal & decorative lights</li>
+                        <li>🪔 Jagran Lighting – Spiritual & stage lighting</li>
+                        <li>🎉 Birthday Party Lighting – Colorful LED lights</li>
+                        <li>💡 LED strings, focus lights & stage lights available</li>
+                    </ul>
+
+                    <a href="/booking/" class="btn btn-custom mt-3">Book Now</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Decoration Services -->
+        <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+            <div class="card service-card border-0 shadow-lg h-100">
+
+                <img src="{% static 'images/event.jpg' %}" class="card-img-top" style="height:220px; object-fit:cover;">
+
+                <div class="card-body text-center p-4">
+                    <h4 class="fw-bold mb-3">Decoration Services</h4>
+
+                    <ul class="text-start">
+                        <li>🎪 Ghunghroo / Ghoomar Decoration</li>
+                        <li>💡 LED Decoration – Modern & elegant look</li>
+                        <li>☂️ Umbrella Decoration – Trendy & colorful</li>
+                        <li>🌸 Custom theme decoration available</li>
+                    </ul>
+
+                    <a href="/booking/" class="btn btn-custom mt-3">Book Now</a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+{% endblock %}
