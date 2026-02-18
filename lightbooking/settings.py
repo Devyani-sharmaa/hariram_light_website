@@ -10,7 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.1/ref/settings/
 """
 
-
+import dj_database_url
 from pathlib import Path
 import os
 from dotenv import load_dotenv
@@ -25,7 +25,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = "django-insecure-(35&j$k-0#np*-czu-3$y_06wfx^vl87trlc#bgjlpa_fsbq*3"
+# SECRET_KEY = "django-insecure-(35&j$k-0#np*-czu-3$y_06wfx^vl87trlc#bgjlpa_fsbq*3"
 
 # SECURITY WARNING: don't run with debug turned on in production!
 
@@ -82,11 +82,11 @@ WSGI_APPLICATION = "lightbooking.wsgi.application"
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
 DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": BASE_DIR / "db.sqlite3",
-    }
+    'default': dj_database_url.parse(
+        os.environ.get('DATABASE_URL')
+    )
 }
+
 
 
 # Password validation
@@ -143,8 +143,8 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 
 # EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-# EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+# EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 
 EMAIL_HOST = 'smtp.gmail.com'
@@ -158,7 +158,7 @@ EMAIL_USE_SSL = True
 
 import os
 
-# # SECRET_KEY = os.environ.get("SECRET_KEY")
+SECRET_KEY = os.environ.get("SECRET_KEY")
 # SECRET_KEY = os.environ.get("SECRET_KEY", "django-insecure-local-key")
 
 
@@ -166,7 +166,7 @@ import os
 
 # ALLOWED_HOSTS = os.environ.get("ALLOWED_HOSTS", "127.0.0.1,localhost").split(",")
 
-# STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
 DEBUG = os.environ.get("DEBUG") == "True"
 
 ALLOWED_HOSTS = os.environ.get(
@@ -175,5 +175,4 @@ ALLOWED_HOSTS = os.environ.get(
 
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
