@@ -10,6 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.1/ref/settings/
 """
 
+
 from pathlib import Path
 import os
 from dotenv import load_dotenv
@@ -27,10 +28,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = "django-insecure-(35&j$k-0#np*-czu-3$y_06wfx^vl87trlc#bgjlpa_fsbq*3"
 
 # SECURITY WARNING: don't run with debug turned on in production!
+
+
 DEBUG = True
-
-ALLOWED_HOSTS = []
-
+ALLOWED_HOSTS = ['*']
 
 # Application definition
 
@@ -45,7 +46,7 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
-    'whitenoise.middleware.WhiteNoiseMiddleware',
+    # 'whitenoise.middleware.WhiteNoiseMiddleware',
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
@@ -127,7 +128,7 @@ STATICFILES_DIRS = [
     BASE_DIR / "static",
 ]
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+# STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 
 MEDIA_URL = '/media/'
@@ -141,7 +142,9 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 
 # EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+# EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
 
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 465
@@ -154,9 +157,12 @@ EMAIL_USE_SSL = True
 
 import os
 
-SECRET_KEY = os.environ.get("SECRET_KEY")
+# # SECRET_KEY = os.environ.get("SECRET_KEY")
+# SECRET_KEY = os.environ.get("SECRET_KEY", "django-insecure-local-key")
 
-DEBUG = os.environ.get("DEBUG") == "True"
 
-ALLOWED_HOSTS = os.environ.get("ALLOWED_HOSTS").split(",")
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+# DEBUG = os.environ.get("DEBUG") == "True"
+
+# ALLOWED_HOSTS = os.environ.get("ALLOWED_HOSTS", "127.0.0.1,localhost").split(",")
+
+# STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
