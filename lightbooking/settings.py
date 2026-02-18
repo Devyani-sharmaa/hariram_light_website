@@ -159,7 +159,7 @@ EMAIL_USE_SSL = True
 
 import os
 
-SECRET_KEY = os.environ.get("SECRET_KEY")
+# SECRET_KEY = os.environ.get("SECRET_KEY")
 # SECRET_KEY = os.environ.get("SECRET_KEY", "django-insecure-local-key")
 
 
@@ -167,12 +167,25 @@ SECRET_KEY = os.environ.get("SECRET_KEY")
 
 # ALLOWED_HOSTS = os.environ.get("ALLOWED_HOSTS", "127.0.0.1,localhost").split(",")
 
+DEBUG = False
 
-DEBUG = os.environ.get("DEBUG") == "True"
 
-ALLOWED_HOSTS = os.environ.get(
-    "ALLOWED_HOSTS", "127.0.0.1,localhost"
-).split(",")
+ALLOWED_HOSTS = [
+    "hariram-light-website.onrender.com",
+    "localhost",
+    "127.0.0.1",
+]
+
+CSRF_TRUSTED_ORIGINS = [
+    "https://hariram-light-website.onrender.com"
+]
+SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTO", "https")
+
+SECRET_KEY = os.environ.get(
+    "SECRET_KEY",
+    "django-insecure-render-temp-key"
+)
+
 
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
